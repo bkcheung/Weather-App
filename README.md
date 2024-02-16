@@ -1,12 +1,8 @@
-# Wot-To-Do
+# Weather
 
-Wot To Do is a to do list one can use to track what they need to do! </br>
+A simple weather app created as a project from The Odin Project </br>
 It uses: </br>
+- Async functions and await
+- Weather API
 
-- Vanilla JS, HTML, CSS
-- Factory functions for task and project creation
-- Local storage
-- DayJS and ghpages
-- Webpack
-
-Click [here](https://bkcheung.github.io/Wot-To-Do/) to take a look!
+Click [here](https://bkcheung.github.io/weather/) to take a look!
