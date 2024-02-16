@@ -13,8 +13,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Wot To Do",
-      template: "./src/index.html",
+      // title: "Wot To Do",
+      // template: "./src/index.html",
     }),
     new MiniCssExtractPlugin(),
   ],
