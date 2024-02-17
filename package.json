@@ -1,7 +1,7 @@
 {
-  "name": "wot-to-do",
+  "name": "weather",
   "version": "1.0.0",
-  "description": "Wot To Do is a to do list one can use to track what they need to do. </br> It uses: </br> * Factory functions",
+  "description": "Wweather app for the odin project",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bkcheung/Wot-To-Do.git"
+    "url": "https://github.com/bkcheung/weather.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bkcheung/Wot-To-Do/issues"
+    "url": "https://github.com/bkcheung/weather/issues"
   },
-  "homepage": "https://github.com/bkcheung/Wot-To-Do#readme",
+  "homepage": "https://github.com/bkcheung/weather#readme",
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
@@ -45,7 +45,7 @@
     "xml2js": ">=0.5.0"
   },
   "dependencies": {
-    "date-fns": "^3.2.0",
+    "dotenv": "^16.4.4",
     "xml2js": ">=0.5.0"
   }
 }

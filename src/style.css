@@ -1,0 +1,37 @@
+body {
+    font-family: 'Roboto-light', sans-serif;
+    background-color: black;
+}
+#page{
+    display: flex;
+    min-height: 98vh;
+    align-items: center;
+}
+#pageLeft{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+}
+#currWeather{
+    display:flex;
+}
+#pageRight{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+#forecast{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:30px;
+}
+.dayTile{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* margin: 30px; */
+    padding: 30px;
+}

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: {
     index: "./src/index.js",
   },
@@ -13,16 +13,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // title: "Wot To Do",
-      // template: "./src/index.html",
+      title: "Weather",
+      template: "./src/index.html",
     }),
     new MiniCssExtractPlugin(),
   ],
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "./dist"),
     clean: true,
-    publicPath: "./",
   },
   optimization: {
     minimize: true,
