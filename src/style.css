@@ -1,10 +1,14 @@
+ 
 body {
     font-family: 'Roboto-light', sans-serif;
-    background-color: black;
+    margin: 0px;
 }
+
 #page{
     display: flex;
-    min-height: 98vh;
+    min-height: 100vh;
+    background: url('./img/background.jpeg');
+    background-size:100% 100%;
     align-items: center;
 }
 #pageLeft{
@@ -32,6 +36,5 @@ body {
 .dayTile{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-    /* margin: 30px; */
     padding: 30px;
 }

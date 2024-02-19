@@ -4,7 +4,7 @@ getWeather();
 
 async function getWeather(){
     try{
-        const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=a5a72b44830a4c4d99e135309241502&q=Toronto&days=3&aqi=yes&alerts=yes");
+        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a5a72b44830a4c4d99e135309241502&q=Toronto&days=3&aqi=yes&alerts=yes`);
         const weather = await response.json();
         renderLeft(weather);
         renderForecast(weather.forecast.forecastday);
@@ -31,15 +31,23 @@ function renderForecast(forecast){
     for(let i=0; i<3; i++){
         const date = document.createElement('h3');
         date.innerHTML = forecast[i].date;
-        const condition = forecast[i].day.condition.text;
-        const icon = forecast[i].day.condition.icon;
-        const high = forecast[i].day.maxtemp_c;
-        const low = forecast[i].day.mintemp_c;
-        console.log(date,condition,high,low);
+        const condition = document.createElement('h4');
+        condition.innerHTML = forecast[i].day.condition.text;
+        const icon = document.createElement('img');
+        icon.src = forecast[i].day.condition.icon;
+        const temp = document.createElement('h4');
+        temp.innerHTML = `${Math.round(forecast[i].day.maxtemp_c)}℃ / ${Math.round(forecast[i].day.mintemp_c)}℃`;
+        // const low = document.createElement('h4');
+        // low.innerHTML = `Low: ${Math.round(forecast[i].day.mintemp_c)}℃`;
+        console.log(forecast[i].day);
 
         const dayTile = document.createElement('div');
         dayTile.classList.add('dayTile');
         dayTile.appendChild(date);
+        dayTile.appendChild(condition);
+        dayTile.appendChild(icon);
+        dayTile.appendChild(temp);
+        // dayTile.appendChild(low);
         forecastSection.appendChild(dayTile);
     }
 }
