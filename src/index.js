@@ -36,7 +36,7 @@ function renderCurrent(weather){
 }
 
 function renderForecast(forecast){
-    const forecastSection = document.getElementById("main");
+    const forecastSection = document.getElementById("weather");
     for(let i=0; i<3; i++){
         const date = document.createElement('div');
         date.innerHTML = dayjs(forecast[i].date).format('ddd MMM D');

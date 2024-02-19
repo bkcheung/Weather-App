@@ -30,7 +30,7 @@ img{
     color: white;
     text-transform: uppercase;
 }
-#main {
+#weather {
     display: flex;
 }
 .current{
