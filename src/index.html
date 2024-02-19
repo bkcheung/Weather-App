@@ -10,9 +10,26 @@
     </head>
     <body>
         <div id = page>
-            <input id = search type = "text" placeholder = "Location">
+            <div>
+                <input id = search type = "text" placeholder = "Location">
+                <button id = submit>↳</button>
+            </div>
             <div id = location></div>
-            <div id = weather></div>
+            <div id = weather>
+                <div id = "current">
+                    <div class = "title">Current Conditions</div>
+                    <img id = "icon">
+                    <div id = "condition"></div>
+                    <div id = "temp"></div>
+                </div>
+            </div>
+            <footer>
+                Copyright &copy
+                <script>
+                  document.write(`${new Date().getFullYear()}&nbsp`);
+                </script>
+                <a id="github" href="https://github.com/bkcheung">bkcheung</a>
+              </footer>
         </div>
     </body>
 </html>
