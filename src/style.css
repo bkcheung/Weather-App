@@ -3,16 +3,38 @@ body {
     font-family: 'Roboto-light', sans-serif;
     margin: 0px;
 }
-
+img{
+    width: 5em;
+    height: 5em;
+}
 #page{
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background: url('./img/background.jpeg');
     background-size:100% 100%;
-    align-items: center;
+    justify-content: space-between;    
 }
-#pageLeft{
-    flex:1;
+#search{
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: x-large;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 30px;
+}
+#location{
+    letter-spacing: 5px;
+    font-size: 5em;
+    align-self: center;
+    color: white;
+    text-transform: uppercase;
+}
+#main {
+    display: flex;
+}
+.current{
+    flex: 3;
     display:flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.5);
@@ -20,21 +42,12 @@ body {
     padding: 30px;
     margin: 30px;
 }
-#currWeather{
-    display:flex;
-}
-#pageRight{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-}
-#forecast{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap:30px;
-}
 .dayTile{
-    border-radius: 10px;
+    flex: 1;
+    display:flex;
+    flex-direction: column;
     background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
     padding: 30px;
+    margin: 30px;
 }
