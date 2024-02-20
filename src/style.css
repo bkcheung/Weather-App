@@ -38,7 +38,7 @@ button {
 }
 #resultDrop.narrow {
   position: relative;
-  width: 95vw;
+  width: 90vw;
   margin: 30px 10px;
 }
 #search {
@@ -56,6 +56,9 @@ button {
   text-transform: uppercase;
   margin-top: auto;
   padding-left: 30px;
+}
+#location.narrow{
+  text-align: center;
 }
 #region {
   letter-spacing: 2px;
@@ -85,11 +88,11 @@ button {
   align-items: center;
   text-align: center;
   justify-content: center;
-  min-width: 120px;
+  /* min-width: 120px; */
   max-width: 150px;
 }
 #current.narrow {
-  min-width: 80vw;
+  min-width: 75vw;
 }
 .dayTile {
   flex: 1;
@@ -104,12 +107,12 @@ button {
   align-items: center;
   text-align: center;
   justify-content: center;
-  min-width: 120px;
+  /* min-width: 120px; */
   max-width: 150px;
 }
 .dayTile.narrow {
   margin: 10px;
-  min-width: 80vw;
+  min-width: 75vw;
 }
 
 .title {
