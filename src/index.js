@@ -6,7 +6,6 @@ getWeather();
 
 async function getWeather(location){
     try{
-        clear();
         if(location===undefined){
             location = "Toronto";
         }
@@ -15,25 +14,59 @@ async function getWeather(location){
                                       ${location}&days=3&aqi=yes&alerts=yes`);
         const weather = await response.json();
         renderCurrent(weather);
+        clear();
         renderForecast(weather.forecast.forecastday);
     } catch(err){
         console.log(`Error: ${err}`);
     }
 }
-
 function searchInit(){
     const search = document.getElementById("search");
     search.addEventListener('keyup', (e)=>{
+        searchLocation(e.target.value);
         if(e.key==="Enter"){
             getWeather(e.target.value);
+            clearResults();
+            document.getElementById("search").value = "";
         }
     })
 }
-
+async function searchLocation(value){
+    try{
+        const newLoc = await fetch(`http://api.weatherapi.com/v1/search.json
+                                ?key=a5a72b44830a4c4d99e135309241502&q=${value}`);
+        const response = await newLoc.json();
+        searchResults(response);
+        return response;
+    } catch(err){
+        console.log(`Error: ${err}`);
+    }
+}
+function searchResults(results){
+    clearResults();
+    const resultDisp = document.getElementById("resultDrop");
+    results.slice(0,3).forEach(element => {//limit to show 3 results
+        const resultButton = document.createElement('button');
+        resultButton.innerHTML =`${element.name}, ${element.region}, ${element.country}`;
+        resultButton.addEventListener('click', ()=>{
+            getWeather(element.name);
+            clearResults();
+            document.getElementById("search").value = "";
+        })
+        resultDisp.appendChild(resultButton);
+    });
+}
+function clearResults(){
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(element => {
+        element.remove();
+    })
+}
 function renderCurrent(weather){
     const location = document.getElementById("location");
     location.innerHTML = weather.location.name;
-
+    const region = document.getElementById("region");
+    region.innerHTML = `${weather.location.region} ${weather.location.country}`;
     const icon = document.getElementById("icon");
     icon.src = weather.current.condition.icon;
     const condition = document.getElementById("condition");
@@ -65,7 +98,6 @@ function renderForecast(forecast){
         forecastSection.appendChild(dayTile);
     }
 }
-
 function clear(){
     const weather = document.getElementById("weather");
     const rm = weather.querySelectorAll('div.dayTile');
