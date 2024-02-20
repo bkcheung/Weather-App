@@ -9,7 +9,7 @@ async function getWeather(location) {
     if (location === undefined) {
       location = "Toronto";
     }
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json
                                       ?key=a5a72b44830a4c4d99e135309241502&q=
                                       ${location}&days=3&aqi=yes&alerts=yes`);
     const weather = await response.json();
@@ -33,7 +33,7 @@ function searchInit() {
 }
 async function searchLocation(value) {
   try {
-    const newLoc = await fetch(`http://api.weatherapi.com/v1/search.json
+    const newLoc = await fetch(`https://api.weatherapi.com/v1/search.json
                                 ?key=a5a72b44830a4c4d99e135309241502&q=${value}`);
     const response = await newLoc.json();
     searchResults(response);
