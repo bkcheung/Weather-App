@@ -1,6 +1,8 @@
 import "./style.css";
+import { pageInit } from "../init";
 const dayjs = require("dayjs");
 
+pageInit();
 searchInit();
 getWeather();
 
@@ -16,6 +18,7 @@ async function getWeather(location) {
     renderCurrent(weather);
     clear();
     renderForecast(weather.forecast.forecastday);
+    clearResults();
   } catch (err) {
     console.log(`Error: ${err}`);
   }
@@ -92,6 +95,9 @@ function renderForecast(forecast) {
 
     const dayTile = document.createElement("div");
     dayTile.classList.add("dayTile");
+    if (window.innerWidth < 800) {
+      dayTile.classList.add("narrow");
+    }
     dayTile.appendChild(date);
     dayTile.appendChild(icon);
     dayTile.appendChild(condition);
