@@ -18,12 +18,13 @@ function initDisplayType() {
   }
 }
 function resizeHandling() {
-  const page = document.getElementById("page");
-  const weather = document.getElementById("weather");
-  const location = document.getElementById("location");
-  const current = document.getElementById("current");
-  const resultDrop = document.getElementById("resultDrop");
+
   window.addEventListener("resize", () => {
+    const page = document.getElementById("page");
+    const weather = document.getElementById("weather");
+    const location = document.getElementById("location");
+    const current = document.getElementById("current");
+    const resultDrop = document.getElementById("resultDrop");
     if (window.innerWidth < threshold) {
       const dayTiles = document.querySelectorAll("div.dayTile");
       page.classList.add("narrow");
@@ -37,7 +38,7 @@ function resizeHandling() {
     }
     if (window.innerWidth > threshold) {
       const dayTiles = document.querySelectorAll("div.dayTile");
-      page.classList.add("narrow");
+      page.classList.remove("narrow");
       weather.classList.remove("narrow");
       location.classList.remove("narrow");
       current.classList.remove("narrow");
@@ -48,3 +49,5 @@ function resizeHandling() {
     }
   });
 }
+
+
