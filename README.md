@@ -1,4 +1,4 @@
-# Weather
+# Weather-App
 
 A simple weather app created as a project from The Odin Project </br>
 It uses: </br>
